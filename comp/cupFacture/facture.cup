@@ -1,0 +1,33 @@
+import java_cup.runtime.*;
+
+action code {:
+int somme = 0;
+int quantite, prix;
+:}
+
+
+terminal FACTURE, NO, TOTAL, ENTIER, VIRG, POINT, ID;
+non terminal facture, lignes, ligne;
+start with facture;
+
+facture ::= FACTURE {: System.out.println("Lecture d'une facture"); :}NO lignes TOTAL ENTIER:n {:
+	int total = ((Integer)n).intValue();
+	System.out.println("Facture terminée");
+	System.out.println("Somme calculée : " + somme + "Total annoncé : " + total);
+	if (total == somme)
+		System.out.println("Facture correcte");
+	else
+		System.out.println("Facture incorrecte");
+	:} POINT ;	 
+	 
+lignes ::= ligne | ligne lignes;
+	 
+ligne ::= ID ENTIER:k {:
+		quantite = ((Integer)k).intValue();
+		System.out.print("quantite " + quantite + "\t");
+	:} ENTIER:n {:
+		prix = ((Integer)n).intValue();
+		System.out.print("\tprix " + " " + prix + " ");
+		somme += prix*quantite;
+		System.out.println("\t" + somme);
+	:} VIRG ;

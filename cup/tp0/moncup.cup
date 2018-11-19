@@ -1,0 +1,7 @@
+import java_cup.runtime.*;
+terminal NUM,PLUS,MOINS,PO,PF,FOIS;
+non terminal expr, term, facteur; 
+start with expr;
+expr ::= expr PLUS term | term | expr MOINS term;
+term ::= term FOIS facteur | facteur;
+facteur ::= PO expr PF | NUM ;

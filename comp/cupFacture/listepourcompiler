@@ -1,0 +1,31 @@
+#1 compiler le cup 
+
+java -jar java-cup-11b.jar expressions.cup
+
+(changer le jflex avec les truc dans sym du genre 
+\+				{ System.out.print("PLUS "); return new Symbol(sym.PLUS);}
+
+
+#2 compiler sym.java
+
+javac sym.java
+
+#3 compiler le fflex 
+
+jflex flexx.flex
+
+#4 compiler le Yylex ou nom du flexé
+
+javac -cp .:java-cup-11b.jar Yylex.java
+
+#5 compiler le parser 
+
+javac -cp .:java-cup-11b.jar parser.java
+
+#6 compiler le main 
+
+javac -cp .:java-cup-11b.jar Main.java
+
+#7 executer le main 
+
+java -cp .:java-cup-11b.jar Main test.txt

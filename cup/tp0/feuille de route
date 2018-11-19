@@ -1,0 +1,21 @@
+#Compiler le fichier CUP
+java -jar java-cup-11b.jar grammaire.cup
+
+#compiler sym.java
+javac sym.java
+
+#compiler jflex
+jflex monfichier.jflex
+
+#importer dans flex
+import java_cup.runtime.*;
+
+#compiler l'analyseur lexical
+javac -cp .:java-cup-11b.jar Yylex.java
+
+#compiler
+javac -cp .:java-cup-11b.jar parser.java
+
+javac -cp .:java-cup-11b.jar Main.java
+
+java -cp .:java-cup-11b.jar Main fichier_a_analyser

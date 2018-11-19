@@ -1,0 +1,7 @@
+FACTURE NO001
+
+chaise	10	120,
+table	2	60,
+tableau	3	35,
+
+TOTAL	1367.

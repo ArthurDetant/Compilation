@@ -1,0 +1,13 @@
+import java_cup.runtime.*;
+
+
+
+terminal FACTURE, NO, TOTAL, ENTIER, VIRG, POINT, ID;
+non terminal facture, lignes, ligne;
+start with facture;
+
+facture ::= FACTURE NO lignes TOTAL ENTIER POINT ;	 
+	 
+lignes ::= ligne | ligne lignes;
+	 
+ligne ::= ID ENTIER ENTIER VIRG ;

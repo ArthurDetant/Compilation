@@ -1,0 +1,11 @@
+import java_cup.runtime.*;
+
+terminal Ga, Meu, Bu, Zo, epsi;
+non terminal L, E; 
+start with L;
+
+L::= L E ;
+E::= Bu E Zo | Ga E Meu | Bu Zo | Ga Meu;
+
+
+

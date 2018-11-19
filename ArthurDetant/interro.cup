@@ -1,0 +1,20 @@
+import java_cup.runtime.*;
+
+terminal DECLARATIONS,CODE,EGAL,DEUXPOINTS, POINTVIRG, NUM, VAR, PO, PF, FONCTION1, FONCTION2;
+non terminal synthaxe, declar, cod, initialisation, doubleinit, lignes, lines; 
+start with synthaxe;
+
+synthaxe ::= DECLARATIONS lignes CODE lines;
+
+lignes ::= declar | declar lignes;
+
+declar ::= initialisation | doubleinit initialisation | VAR POINTVIRG;
+
+initialisation ::= VAR DEUXPOINTS EGAL NUM POINTVIRG;
+
+doubleinit ::= VAR EGAL;
+
+cod ::= FONCTION1 VAR PF POINTVIRG | FONCTION2 VAR PF POINTVIRG;
+
+lines ::= cod | cod lines;
+
