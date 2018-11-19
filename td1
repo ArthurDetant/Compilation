@@ -1,0 +1,35 @@
+https://www-lisic.univ-littoral.fr/~fonlupt/Enseignement/2018/compilation/td1.pdf
+Exercice 1:
+
+L1=0(0|1)*0
+ensemble des mots binaires qui commencent par un 0 et qui finissent par un 0 (00/ 000/ 010/ 0010/..)
+L2 = ((e|0)1*)*
+ensemble des mots binaires
+L3 = (0|1)*0(0|1)(0|1)
+ensemble des mots binaires de taille supérieur ou égal à 3 dont l'avant avant dernier élément est '0'
+L4 = 0*10*10*10*
+ensemble des mots binaires contenant exactement 3 '1'
+L5 = ((0|1)(0|1)(0|1))*
+ensemble des mots binaires dont la taille est un multiple de 3 (0 inclus)
+
+L = 1(011)*01 et L' = (101)+
+EQUIVALENTS
+
+L = (01)+ et L' = (0101)*
+01 appartient à L mais 01 n'appartient pas à L'
+
+L = (01|10)* et L' = ((0|1)(0|1))*
+11 appartient à L' mais n'appartient pas à L
+
+Exercice 2:
+{a,b,c,d,e}
+L1= a*b*c*d*e*
+L2= (a|d|e)*(b|d|e)*(c|d|e)*
+L3= (a|b|c|d)*|(a|c|d|e)*|(a|b|d|e)*|(b|c|d|e)*|(a|b|c|e)*
+
+Exercice 3:
+chiffre -> [0-9]
+coeff -> chiffre *
+exp -> chiffre | E
+MONOME -> coeff X exp | chiffre
+POLYNOME -> (SIGNE|E) MONOME(SIGNE MONOME)*
