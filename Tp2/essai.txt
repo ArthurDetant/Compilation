@@ -1,0 +1,4 @@
+un commentaire
+// ci-dessous
+pas ici
+/* beuh et thotho */

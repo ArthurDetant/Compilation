@@ -1,0 +1,4 @@
+ceci est un 17
+un vrai 25.2
+ce n'est pas rien 1
+42.0 

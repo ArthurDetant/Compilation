@@ -2,6 +2,7 @@
 %unicode
 %line
 %standalone
+%class fact
 FACTURE= "FACTURE"
 NO = [a-zA-Z]{2}[0-9]{3}
 LIB = [a-zA-Z]+
@@ -18,5 +19,5 @@ PT = "."
 {VIRG} {System.out.println("Ligne " +(yyline+1) + " : " +"VIRG");}
 {TOTAL} {System.out.println("Ligne " +(yyline+1) + " : " +"TOTAL");}
 {PT} {System.out.println("Ligne " +(yyline+1) + " : " +"PT");}
-.	{;}
+"."	{;}
 "\n"	{;}
